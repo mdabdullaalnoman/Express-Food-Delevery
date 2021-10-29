@@ -25,6 +25,9 @@
     color: var(--lightBlack);
     border-radius:10rem;
 }
+#hero .hero-content button:hover{
+    background-color: var(--white);
+}
 #hero .hero-img img{
     width: 100%;
 }

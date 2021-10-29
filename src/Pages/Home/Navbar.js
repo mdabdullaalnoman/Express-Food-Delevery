@@ -26,8 +26,8 @@ const Navbar = () => {
                 <nav className={isActive ? 'navbar active' : 'navbar'}>
                     <NavLink to="/home" activeStyle={menuActive}>Home</NavLink>
                     <NavLink to="/aboutUs" activeStyle={menuActive}>About Us</NavLink>
-                    <NavLink to="/blogNews" activeStyle={menuActive}>Blog/News</NavLink>
-                    <NavLink to="/shop" activeStyle={menuActive}>Shop</NavLink>
+                    <NavLink to="/myOrder" activeStyle={menuActive}>My Order</NavLink>
+                    <NavLink to="/addFood" activeStyle={menuActive}>Add Food</NavLink>
                     <NavLink to="/login" activeStyle={menuActive}>Login</NavLink>
                 </nav>
 
@@ -42,9 +42,9 @@ const Navbar = () => {
                 </div>
                 {/* Header icons-------------------------------- */}
                 <div className="icons">
-                    <Link className="fas fa-shopping-cart" />
-                    <Link className="fas fa-phone-alt" />
-                    <Link className="fas fa-user" />
+                    <Link to="/" className="fas fa-shopping-cart" />
+                    <Link to="/" className="fas fa-phone-alt" />
+                    <Link to="/login" className="fas fa-user" />
                 </div>
             </div>
 

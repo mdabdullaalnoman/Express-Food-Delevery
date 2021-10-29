@@ -1,0 +1,24 @@
+.application-warp{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:5rem;
+}
+.application h1{
+    font-size: 5rem;
+    color: var(--lightBlack);
+}
+.application h1 span{
+    color: var(--gold);
+}
+.application p{
+    padding: 2rem 0;
+    font-size: 2rem;
+}
+.application ol li{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.application-img img{
+    width: 100%;
+}

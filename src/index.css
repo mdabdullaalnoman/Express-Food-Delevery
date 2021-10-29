@@ -25,6 +25,7 @@ code {
 }
 
 :root {
+  --deepGold: #f7b614;
   --gold: #f7b614;
   --white: #fff;
   --lightBlack: #282932;
@@ -107,6 +108,34 @@ code {
     color: white !important;
     border-bottom: none !important;
   }
+}
+
+@media (max-width:768px){
+  /* hero section */
+  #hero .hero-content h1{
+    font-size: 4rem !important;
+  }
+  #hero {
+    flex-wrap: wrap-reverse !important;
+  }
+
+  /* contract banner */
+  .contract-banner-warp{
+   grid-template-columns: 1fr !important;
+  }
+  .contract-banner-warp .contract-banner-content h3{
+    font-size: 3rem !important;
+   }
+   .contract-banner-warp .contract-banner-content p{
+    padding: 1rem 0 !important;
+   }
+   /* application */
+   .application-warp{
+    flex-wrap: wrap !important;
+   }
+   .application-img {
+     padding-top: 1rem!important;
+   }
 }
 
 @media(max-width:498px) {

@@ -1,0 +1,27 @@
+.not-found{
+    background-image: url('../../food_delevari_media/notFound.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+}
+.go-back{
+    margin: 0;
+    text-align: center;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.go-back button{
+    background-color: #4fcc85;
+    color: white;
+    padding: 1.5rem 4rem;
+    font-size: 2rem;
+    border-radius: 1rem;
+}
+.go-back button:hover{
+    background-color: tomato;
+    transition: .3s;
+}

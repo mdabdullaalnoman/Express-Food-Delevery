@@ -1,0 +1,27 @@
+.footer-warp{
+    background-color: var(--lightBlack);
+    padding-top: 5rem;
+}
+
+.footer{
+    text-align: center;
+}
+.footer .footer-call-img img{
+    width: 30%;
+}
+.footer .footer-call-content{
+    color: var(--lightBlack);
+    background-color: var(--gold);
+    padding: 1rem 0;
+}
+
+.copy-right{
+    border-top: 3px dotted var(--white);
+    text-align: center;
+    color: var(--white);
+    padding: 2rem 0;
+    font-size: 2rem;
+}
+.copy-right p span{
+    color: var(--gold);
+}

@@ -1,0 +1,16 @@
+.add-food{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add-food form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.add-food input{
+    border: 1px solid var(--lightBlack);
+    width: 100%;
+    margin: 2rem 0;
+    padding: 1rem 1rem;
+}

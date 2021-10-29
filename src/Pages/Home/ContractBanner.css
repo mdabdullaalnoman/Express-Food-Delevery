@@ -1,0 +1,36 @@
+.contract-banner-warp{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    background: var(--lightBlack);
+}
+.contract-banner-warp .contract-banner-img img{
+    width: 100%;
+}
+.contract-banner-content{
+    text-align: center;
+}
+.contract-banner-warp .contract-banner-content h3{
+    font-size: 6rem;
+    color: var(--white);
+}
+.contract-banner-warp .contract-banner-content h3 span{
+    color: var(--gold);
+}
+.contract-banner-warp .contract-banner-content p{
+    font-size: 1.5rem;
+    padding: 3rem 0;
+    color: var(--white);
+}
+.contract-banner-warp .contract-banner-content button{
+    background-color: var(--gold);
+    padding: 2rem 8rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--lightBlack);
+    border-radius:10rem;
+}
+.contract-banner-warp .contract-banner-content button:hover{
+    background-color: var(--white);
+}

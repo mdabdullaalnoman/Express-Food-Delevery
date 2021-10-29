@@ -7,6 +7,12 @@ import {
 } from "react-router-dom";
 import Home from './Pages/Home/Home';
 import NotFound from './Pages/NotFound/NotFound';
+import AddFood from './Pages/AddFood/AddFood';
+import MyOrder from './Pages/MyOrder/MyOrder';
+import Login from './Pages/Login/Login';
+import firebaseInit from './Pages/firebase/firebaseinit';
+
+firebaseInit();
 
 const App = () => {
   return (
@@ -17,6 +23,15 @@ const App = () => {
         </Route>
         <Route path="/home">
           <Home />
+        </Route>
+        <Route path="/addFood">
+          <AddFood />
+        </Route>
+        <Route path="/myOrder">
+          <MyOrder />
+        </Route>
+        <Route path="/login">
+          <Login />
         </Route>
         <Route path="*">
           <NotFound />
