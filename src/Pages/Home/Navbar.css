@@ -1,0 +1,111 @@
+
+
+
+/*-----------------------------
+ Header section start 
+-------------------------------*/
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 3%;
+  border-top: 2px solid rgba(68,68,68,.4);
+  background-color:#282932 ;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.493);
+  position: relative;
+  z-index: 1000;
+}
+
+.nav-contract{
+  display: flex;
+  align-items: center;
+}
+.contract-icon i{
+  font-size: 5rem;
+}
+.contract-content{
+  padding-left: 2rem;
+}
+.contract-content{
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.header .search-bar-container {
+  display: flex;
+  float: right;
+  padding: 1rem;
+  background: rgb(255, 255, 255, .2);
+  border-radius: .5rem;
+}
+
+.header .search-bar-container #search-bar {
+  width: 100%;
+  background: none;
+  text-transform: none;
+  color: #fff;
+  font-size: 1.7rem;
+}
+
+.header .search-bar-container #search-bar::placeholder {
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.header .search-bar-container label {
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0 .5rem;
+}
+.header .search-bar-container label:hover {
+  transform: scale(.9);
+}
+
+.header .navbar a {
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-right: 2rem;
+  display: inline-block;
+  border-bottom: 2px solid #282932;
+}
+
+.header .icons a {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-left: 2rem;
+}
+
+.header.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.header .navbar a:hover {
+  color: #f7b614;
+}
+
+.header .icons a:hover {
+  color: #f7b614;
+  transform: scale(.9);
+}
+
+
+.header.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#menu-bar {
+  font-size: 2rem;
+  color: #fff;
+  border: .3rem solid #fff;
+  border-radius: .5rem;
+  padding: .5rem 1.5rem;
+  cursor: pointer;
+  display: none;
+}

@@ -1,0 +1,30 @@
+#hero{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background: var(--lightBlack);
+   padding: 5rem;
+}
+#hero .hero-content h1{
+    font-size: 8rem;
+    color: var(--white);
+}
+#hero .hero-content h1 span{
+    color: var(--gold);
+}
+#hero .hero-content p{
+    color: var(--white);
+    font-size: 1.5rem;
+    padding-bottom: 5rem;
+}
+#hero .hero-content button{
+    background-color: var(--gold);
+    padding: 2rem 8rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--lightBlack);
+    border-radius:10rem;
+}
+#hero .hero-img img{
+    width: 100%;
+}

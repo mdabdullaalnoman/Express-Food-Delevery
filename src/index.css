@@ -10,4 +10,119 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  outline: none;
+  border: none;
+  text-decoration: none !important;
+  transition: all .2s linear;
+}
+
+:root {
+  --gold: #f7b614;
+  --white: #fff;
+  --lightBlack: #282932;
+}
+
+*::selection {
+  color: #fff;
+  background-color: #000;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden; 
+  scroll-padding-top: 6rem;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* common css class */
+.body-padding {
+  padding: 0 9%;
+}
+
+/*-------------------------------------
+ media queries
+------------------------------------- */
+@media (max-width:1200px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+
+@media(max-width:991px) {
+  #menu-bar {
+    display: initial !important;
+  }
+  .header {
+    padding: 2rem;
+    flex-wrap: wrap !important;
+  }
+  .header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 1rem 2rem;
+    border-top: .1rem solid rgb(14, 9, 9);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); */
+  }
+  .header .navbar{
+    background-color: rgba(0, 0, 0, 0.671) !important;
+  }
+
+  .header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%) !important;
+  }
+
+  .header .navbar a {
+    display: block;
+    margin: 1.5rem 0;
+    border-radius: .5rem;
+    width: 100%;
+    text-align: center;
+    color: white !important;
+    border-bottom: none !important;
+  }
+}
+
+@media(max-width:498px) {
+  html {
+    font-size: 50%;
+  }
+  .header-contract{
+  display: none;
+  }
+  .nav-contract{
+    display: none !important;
+  }
+  .products-warp{
+    grid-template-columns: 1fr !important;
+  }
+  .fa-shopping-cart , .fa-phone-alt{
+    display: none !important;
+  }
 }
