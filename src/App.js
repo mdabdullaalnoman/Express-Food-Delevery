@@ -10,7 +10,8 @@ import NotFound from './Pages/NotFound/NotFound';
 import AddFood from './Pages/AddFood/AddFood';
 import MyOrder from './Pages/MyOrder/MyOrder';
 import Login from './Pages/Login/Login';
-import firebaseInit from './Pages/firebase/firebaseinit';
+import firebaseInit from './firebase/firebaseinit';
+import ManageFood from './Pages/ManageFood/ManageFood';
 
 firebaseInit();
 
@@ -29,6 +30,9 @@ const App = () => {
         </Route>
         <Route path="/myOrder">
           <MyOrder />
+        </Route>
+        <Route path="/manageFood">
+          <ManageFood />
         </Route>
         <Route path="/login">
           <Login />

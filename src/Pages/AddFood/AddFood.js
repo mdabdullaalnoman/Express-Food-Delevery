@@ -7,7 +7,24 @@ import Footer from '../Footer/Footer';
 
 const AddFood = () => {
     const { register, formState: { errors }, reset, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        fetch('http://localhost:5000/foods', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    alert('food added success fully')
+                }
+                else{
+                    alert('some things went wrong')
+                }
+            })
+            
+            reset();
+    };
     return (
         <div>
             <Navbar />
@@ -26,7 +43,9 @@ const AddFood = () => {
                     {errors.imageUrl?.type === 'required' && "imageUrl is required"}
 
                     <input type="submit" />
+
                 </form>
+
             </div>
             <Footer />
         </div>

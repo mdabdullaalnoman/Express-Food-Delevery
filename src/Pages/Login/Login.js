@@ -1,18 +1,23 @@
 import React from 'react';
-import { FaFacebook } from "@react-icons/all-files/fa/FaFacebook";
-import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
+// import { FaFacebook } from "@react-icons/all-files/fa/FaFacebook";
+// import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
+// import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
 import { FaGoogle } from "@react-icons/all-files/fa/FaGoogle";
-import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
 import { IoArrowBackOutline } from "react-icons/io5";
 import './Login.css';
 import { Link } from 'react-router-dom';
 import Navbar from '../Home/Navbar';
 import Footer from '../Footer/Footer';
+import useFirebase from '../../Hooks/useFirebase';
 
 
 
 const Login = () => {
+    const { handleGoogleSignIn, user } = useFirebase();
 
+
+
+    console.log(user.displayName);
     // back button working -----------------
     const goBack = () => {
         window.history.go(-1)
@@ -55,10 +60,10 @@ const Login = () => {
                     </form>
                     {/* <p className="message"> {message}</p> */}
                     <div className="icons">
-                        <FaGoogle className="google-icon" />
-                        <FaFacebook className="facebook-icon" />
+                        <FaGoogle onClick={handleGoogleSignIn} className="google-icon" />
+                        {/* <FaFacebook className="facebook-icon" />
                         <FaGithub className="github-icon" />
-                        <FaTwitter className="twitter-icon" />
+                        <FaTwitter className="twitter-icon" /> */}
                     </div>
                 </div>
             </div>
