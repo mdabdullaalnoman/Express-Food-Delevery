@@ -5,9 +5,7 @@ firebaseInit();
 export const firebaseProvider = createContext();
 
 const ContextProvider = ({ children }) => {
-    console.log(children);
     const allFirebaseFunction = useFirebase();
-    console.log(allFirebaseFunction);
     return (
         <firebaseProvider.Provider value={allFirebaseFunction}>
             {children}

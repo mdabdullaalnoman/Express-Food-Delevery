@@ -8,7 +8,7 @@ import Footer from '../Footer/Footer';
 const AddFood = () => {
     const { register, formState: { errors }, reset, handleSubmit } = useForm();
     const onSubmit = data => {
-        fetch('http://localhost:5000/foods', {
+        fetch('https://still-scrubland-42522.herokuapp.com/foods', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)

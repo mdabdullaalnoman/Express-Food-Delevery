@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import useAuth from '../../ContextProvider/useAuth';
 import logo from '../../food_delevari_media/logoNav.png';
-import useFirebase from '../../Hooks/useFirebase';
 import './Navbar.css';
 
 const Navbar = () => {
-    const { handleGoogleSignOut, user } = useFirebase();
+    const { handleGoogleSignOut, user } = useAuth();
 
     // toggle active class on menubar-------------------------------
     const [isActive, setActive] = useState(false);

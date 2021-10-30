@@ -7,7 +7,7 @@ const ManageFood = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/foods')
+        fetch('https://still-scrubland-42522.herokuapp.com/foods')
             .then(res => res.json())
             .then(data => setManageFood(data))
 
@@ -17,7 +17,7 @@ const ManageFood = () => {
     const handleFoodDelete = (id) => {
         const process = window.confirm('sure ? you want to delete this product');
         if (process) {
-            fetch(`http://localhost:5000/foods/${id}`, {
+            fetch(`https://still-scrubland-42522.herokuapp.com/foods${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

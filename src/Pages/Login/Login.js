@@ -8,15 +8,30 @@ import './Login.css';
 import { Link } from 'react-router-dom';
 import Navbar from '../Home/Navbar';
 import Footer from '../Footer/Footer';
-import useFirebase from '../../Hooks/useFirebase';
-
-
+import useAuth from '../../ContextProvider/useAuth';
+import { useHistory, useLocation } from 'react-router-dom';
 
 const Login = () => {
-    const { handleGoogleSignIn, user } = useFirebase();
+    const { handleGoogleSignIn, user } = useAuth();
+    const location = useLocation();
+    const history = useHistory();
 
+    console.log(location?.state?.from);
+    const handleGoogleLogin = () => {
+        handleGoogleSignIn()
+            .then((result) => {
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                // const credential = GoogleAuthProvider.credentialFromResult(result);
+                // const token = credential.accessToken;
+                const user = result.user;
+                history.push(location?.state?.from || '/')
+                console.log(user);
+            })
 
-
+            .catch((error) => {
+                console.log(error.message);
+            });
+    }
     console.log(user.displayName);
     // back button working -----------------
     const goBack = () => {
@@ -60,7 +75,7 @@ const Login = () => {
                     </form>
                     {/* <p className="message"> {message}</p> */}
                     <div className="icons">
-                        <FaGoogle onClick={handleGoogleSignIn} className="google-icon" />
+                        <FaGoogle onClick={handleGoogleLogin} className="google-icon" />
                         {/* <FaFacebook className="facebook-icon" />
                         <FaGithub className="github-icon" />
                         <FaTwitter className="twitter-icon" /> */}

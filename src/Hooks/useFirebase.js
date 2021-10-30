@@ -1,37 +1,26 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
 
-
-
-
 const useFirebase = () => {
     const auth = getAuth();
     const [user, setUser] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
 
     // google sing in ------------------------------------------------------------
     const handleGoogleSignIn = () => {
         const GoogleProvider = new GoogleAuthProvider();
-        signInWithPopup(auth, GoogleProvider)
-            .then((result) => {
-                // This gives you a Google Access Token. You can use it to access the Google API.
-                const credential = GoogleAuthProvider.credentialFromResult(result);
-                const token = credential.accessToken;
-                const user = result.user;
-                setUser(user);
-
-            })
-            .catch((error) => {
-                console.log(error.message);
-            });
+        return signInWithPopup(auth, GoogleProvider)
     }
 
     // on login user info stored ------------------------------------------
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
+            setIsLoading(true)
             if (user) {
                 setUser(user)
+                setIsLoading(false)
             } else {
-               setUser({})
+                setUser({})
             }
         });
     }, [auth])
@@ -47,6 +36,7 @@ const useFirebase = () => {
 
     return {
         user,
+        isLoading,
         handleGoogleSignIn,
         handleGoogleSignOut
     }
