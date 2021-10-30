@@ -8,6 +8,7 @@ const useFirebase = () => {
 
     // google sing in ------------------------------------------------------------
     const handleGoogleSignIn = () => {
+        setIsLoading(true);
         const GoogleProvider = new GoogleAuthProvider();
         return signInWithPopup(auth, GoogleProvider)
     }
@@ -22,20 +23,23 @@ const useFirebase = () => {
             } else {
                 setUser({})
             }
-        });
+            setIsLoading(true)
+        })
     }, [auth])
 
     // google sing out-----------------------------------------------
     const handleGoogleSignOut = () => {
-        signOut(auth).then(() => {
-            setUser({})
-        }).catch((error) => {
-            // An error happened.
-        });
+        setIsLoading(true);
+        signOut(auth)
+        .then(() => { })
+       
+        .finally(() => setIsLoading(false));
     }
 
     return {
         user,
+        isLoading,
+        setIsLoading,
         isLoading,
         handleGoogleSignIn,
         handleGoogleSignOut

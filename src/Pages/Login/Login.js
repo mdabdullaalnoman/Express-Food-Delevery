@@ -12,27 +12,23 @@ import useAuth from '../../ContextProvider/useAuth';
 import { useHistory, useLocation } from 'react-router-dom';
 
 const Login = () => {
-    const { handleGoogleSignIn, user } = useAuth();
+    const { handleGoogleSignIn, setIsLoading } = useAuth();
     const location = useLocation();
     const history = useHistory();
-
-    console.log(location?.state?.from);
     const handleGoogleLogin = () => {
         handleGoogleSignIn()
             .then((result) => {
                 // This gives you a Google Access Token. You can use it to access the Google API.
                 // const credential = GoogleAuthProvider.credentialFromResult(result);
                 // const token = credential.accessToken;
-                const user = result.user;
-                history.push(location?.state?.from || '/')
-                console.log(user);
+                // const user = result.user;
+                history.push(location.state?.from || '/')
             })
 
-            .catch((error) => {
-                console.log(error.message);
+            .finally((error) => {
+                setIsLoading(false)
             });
     }
-    console.log(user.displayName);
     // back button working -----------------
     const goBack = () => {
         window.history.go(-1)

@@ -1,12 +1,13 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router';
-import useFirebase from '../../Hooks/useFirebase';
+import useAuth from '../../ContextProvider/useAuth';
 
 const PrivateRoute = ({ children, ...rest }) => {
-    const { user , isLoading } = useFirebase();
-    if(isLoading){
-        <h1>loading .....</h1>
-    }
+    const { user , isLoading} = useAuth();
+    // if(!isLoading){
+    //     return <h1>loading...</h1>
+    // }
+    console.log(isLoading);
     return (
         <Route
             {...rest}

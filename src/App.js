@@ -10,7 +10,6 @@ import NotFound from './Pages/NotFound/NotFound';
 import AddFood from './Pages/AddFood/AddFood';
 import MyOrder from './Pages/MyOrder/MyOrder';
 import Login from './Pages/Login/Login';
-import firebaseInit from './firebase/firebaseinit';
 import ManageFood from './Pages/ManageFood/ManageFood';
 import ContextProvider from './ContextProvider/ContextProvider';
 import Purches from './Pages/Puuches/Purches';

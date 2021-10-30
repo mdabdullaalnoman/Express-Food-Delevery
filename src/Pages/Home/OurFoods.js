@@ -18,23 +18,29 @@ const OurFoods = () => {
                 <p>Quick pic</p>
                 <h1>Popular Foods</h1>
             </div>
-            <div className="food-warp">
-                {
-                    food.map(food =>
-                        <div className="food" key={food._id}>
-                            <div className="food-img">
-                                <img src={food.imageUrl} alt="" />
-                            </div>
-                            <div className="food-content">
-                                <h1>{food.tittle}</h1>
-                                <p>{food.description}</p>
-                                <h3>$ {food.price}.99 </h3>
-                                <Link to="purches"><button>buy now</button></Link>
-                            </div>
-                        </div>
-                    )
-                }
-            </div>
+            {
+                food.length
+                    ?
+                    <div className="food-warp">
+                        {
+                            food.map(food =>
+                                <div className="food" key={food._id}>
+                                    <div className="food-img">
+                                        <img src={food.imageUrl} alt="" />
+                                    </div>
+                                    <div className="food-content">
+                                        <h1>{food.tittle}</h1>
+                                        <p>{food.description}</p>
+                                        <h3>$ {food.price}.99 </h3>
+                                        <Link to="purches"><button>buy now</button></Link>
+                                    </div>
+                                </div>
+                            )
+                        }
+                    </div>
+                    :
+                    <h1>loading...</h1>
+            }
         </div>
     );
 };
