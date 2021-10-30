@@ -12,36 +12,43 @@ import MyOrder from './Pages/MyOrder/MyOrder';
 import Login from './Pages/Login/Login';
 import firebaseInit from './firebase/firebaseinit';
 import ManageFood from './Pages/ManageFood/ManageFood';
+import ContextProvider from './ContextProvider/ContextProvider';
+import Purches from './Pages/Puuches/Purches';
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 
-firebaseInit();
 
 const App = () => {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/home">
-          <Home />
-        </Route>
-        <Route path="/addFood">
-          <AddFood />
-        </Route>
-        <Route path="/myOrder">
-          <MyOrder />
-        </Route>
-        <Route path="/manageFood">
-          <ManageFood />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="*">
-          <NotFound />
-        </Route>
-      </Switch>
-    </Router>
+    <ContextProvider>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route path="/addFood">
+            <AddFood />
+          </Route>
+          <Route path="/myOrder">
+            <MyOrder />
+          </Route>
+          <Route path="/manageFood">
+            <ManageFood />
+          </Route>
+          <PrivateRoute path="/purches">
+            <Purches />
+          </PrivateRoute>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="*">
+            <NotFound />
+          </Route>
+        </Switch>
+      </Router>
+    </ContextProvider>
   );
 };
 

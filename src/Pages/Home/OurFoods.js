@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './OurFoods.css';
 
 const OurFoods = () => {
@@ -28,7 +29,7 @@ const OurFoods = () => {
                                 <h1>{food.tittle}</h1>
                                 <p>{food.description}</p>
                                 <h3>$ {food.price}.99 </h3>
-                                <button>buy now</button>
+                                <Link to="purches"><button>buy now</button></Link>
                             </div>
                         </div>
                     )

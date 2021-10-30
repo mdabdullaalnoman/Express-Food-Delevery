@@ -55,6 +55,7 @@ const Navbar = () => {
                 <div className="icons">
                     <Link to="/" className="fas fa-shopping-cart" />
                     <Link to="/" className="fas fa-phone-alt" />
+                    <Link to="/" >{user.displayName}</Link>
                     <Link to="/login" className="fas fa-user" />
                 </div>
             </div>
