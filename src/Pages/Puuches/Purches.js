@@ -52,10 +52,10 @@ const Purches = () => {
             <Navbar />
             <div className="add-food">
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <input {...register("tittle", { required: true })} placeholder="name" defaultValue={user?.email} />
+                    <input {...register("tittle", { required: true })} placeholder="name" defaultValue={user?.displayName} />
                     {errors.tittle?.type === 'required' && "title is required"}
 
-                    <input {...register("email", { required: true })} placeholder="email"  />
+                    <input {...register("email", { required: true })} placeholder="email" defaultValue={user?.email} />
                     {errors.email?.type === 'required' && "email is required"}
 
                     <input {...register("description", { required: true })} placeholder="description"/>
