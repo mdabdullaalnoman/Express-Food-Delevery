@@ -56,7 +56,14 @@ const Navbar = () => {
                     <Link to="/" className="fas fa-shopping-cart" />
                     <Link to="/" className="fas fa-phone-alt" />
                     <Link to="/" >{user.displayName}</Link>
-                    <Link to="/login" className="fas fa-user" />
+                    {
+                        user.photoURL
+                            ?
+                            <Link to="/" id="user-photo"><img src={user.photoURL} alt="" /></Link>
+                            :
+                            <Link to="/login" className="fas fa-user" />
+                    }
+
                 </div>
             </div>
 

@@ -109,3 +109,13 @@
   cursor: pointer;
   display: none;
 }
+
+/* user ------------ */
+#user-photo{
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+}
+#user-photo img{
+  width: 100%;
+}

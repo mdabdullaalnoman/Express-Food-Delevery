@@ -32,7 +32,7 @@ const OurFoods = () => {
                                         <h1>{food.tittle}</h1>
                                         <p>{food.description}</p>
                                         <h3>$ {food.price}.99 </h3>
-                                        <Link to="purches"><button>buy now</button></Link>
+                                        <Link to={`/purches/${food._id}`}><button>buy now</button></Link>
                                     </div>
                                 </div>
                             )

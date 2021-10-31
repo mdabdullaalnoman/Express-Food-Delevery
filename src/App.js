@@ -36,7 +36,7 @@ const App = () => {
           <Route path="/manageFood">
             <ManageFood />
           </Route>
-          <PrivateRoute path="/purches">
+          <PrivateRoute path="/purches/:id">
             <Purches />
           </PrivateRoute>
           <Route path="/login">

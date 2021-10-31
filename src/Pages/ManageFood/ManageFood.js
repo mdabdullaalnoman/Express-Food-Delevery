@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Footer from '../Footer/Footer';
 import Navbar from '../Home/Navbar';
+import './MangageFood.css';
 
 const ManageFood = () => {
     const [manageFood, setManageFood] = useState([]);
@@ -17,7 +18,7 @@ const ManageFood = () => {
     const handleFoodDelete = (id) => {
         const process = window.confirm('sure ? you want to delete this product');
         if (process) {
-            fetch(`https://still-scrubland-42522.herokuapp.com/foods${id}`, {
+            fetch(`https://still-scrubland-42522.herokuapp.com/foods/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -38,10 +39,11 @@ const ManageFood = () => {
             {
                 manageFood.length
                     ?
-                    <div className="manage-food">
+                    <div className="manage-food-warp">
                         {
                             manageFood.map(food =>
-                                <div key={food._id}>
+                                <div key={food._id} className="manage-food">
+                                    <img src={food.imageUrl} alt="" />
                                     <h1>{food.tittle}</h1>
                                     <button onClick={() => handleFoodDelete(food._id)}>delete</button>
                                 </div>
