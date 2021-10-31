@@ -59,7 +59,9 @@ const Navbar = () => {
                     {
                         user.photoURL
                             ?
-                            <Link to="/" id="user-photo"><img src={user.photoURL} alt="" /></Link>
+                            <div className="user-img">
+                                <img src={user.photoURL} alt="" />
+                            </div>
                             :
                             <Link to="/login" className="fas fa-user" />
                     }

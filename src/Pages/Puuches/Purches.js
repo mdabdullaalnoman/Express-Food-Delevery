@@ -15,9 +15,27 @@ const Purches = () => {
     const { register, formState: { errors }, reset, handleSubmit } = useForm();
 
     const onSubmit = data => {
+        fetch('http://localhost:5000/purches' , {
+            method:'POST',
+            headers:{'Content-Type' : 'application/json'},
+            body: JSON.stringify(data)
+        })
+        .then( res => res.json())
+        .then (data => {
+            if(data.insertedId){
+                alert(' successfully added this food')
+            }
+        })
+
+        .catch(errors => {
+            console.log(errors.message);
+        })
         console.log(data);
         reset();
     };
+
+    // post purche data --------------------------------------
+    
 
     // clicked food data load---------------------------------
     useEffect(() => {
@@ -36,6 +54,9 @@ const Purches = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <input {...register("tittle", { required: true })} placeholder="name" defaultValue={user?.displayName} />
                     {errors.tittle?.type === 'required' && "title is required"}
+
+                    <input {...register("email", { required: true })} placeholder="email"  />
+                    {errors.email?.type === 'required' && "email is required"}
 
                     <input {...register("description", { required: true })} placeholder="description"/>
                     {errors.description && "description is required"}
