@@ -32,7 +32,7 @@ const Navbar = () => {
                     <NavLink to="/addFood" activeStyle={menuActive}>Add Food</NavLink>
                     <NavLink to="/manageFood" activeStyle={menuActive}>Manage Food</NavLink>
                     {
-                        user.displayName
+                        user.email
                             ?
                             <NavLink to="/login" onClick={handleGoogleSignOut} activeStyle={menuActive}>Logout</NavLink>
                             :
@@ -55,7 +55,7 @@ const Navbar = () => {
                 <div className="icons">
                     <Link to="/" className="fas fa-shopping-cart" />
                     <Link to="/" className="fas fa-phone-alt" />
-                    <Link to="/" >{user.displayName}</Link>
+                    <Link to="/" id="user-name">{user.displayName}</Link>
                     {
                         user.photoURL
                             ?

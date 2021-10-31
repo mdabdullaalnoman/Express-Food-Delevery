@@ -123,3 +123,7 @@
   width: 30px;
   border-radius: 100%;
 }
+#user-name{
+  font-size: 1rem !important;
+  padding-right: 1rem;
+}
