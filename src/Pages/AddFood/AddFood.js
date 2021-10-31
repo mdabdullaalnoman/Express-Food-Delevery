@@ -28,6 +28,7 @@ const AddFood = () => {
     return (
         <div>
             <Navbar />
+            <h1 className="order-tittle">Add Food</h1>
             <div className="add-food">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <input {...register("tittle", { required: true })} placeholder="tittle" />
