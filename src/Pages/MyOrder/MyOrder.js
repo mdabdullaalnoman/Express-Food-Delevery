@@ -10,7 +10,7 @@ const MyOrder = () => {
     const [order, setOrder] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/purches`)
+        fetch(`https://spooky-ghoul-75443.herokuapp.com/purches`)
             .then(res => res.json())
             .then(data => setOrder(data))
 

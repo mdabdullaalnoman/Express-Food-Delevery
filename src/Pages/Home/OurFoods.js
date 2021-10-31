@@ -5,7 +5,7 @@ import './OurFoods.css';
 const OurFoods = () => {
     const [food, setFood] = useState([]);
     useEffect(() => {
-        fetch('https://still-scrubland-42522.herokuapp.com/foods')
+        fetch('https://spooky-ghoul-75443.herokuapp.com/foods')
             .then(res => res.json())
             .then(data => setFood(data))
 

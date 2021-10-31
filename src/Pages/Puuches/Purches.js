@@ -15,7 +15,7 @@ const Purches = () => {
     const { register, formState: { errors }, reset, handleSubmit } = useForm();
 
     const onSubmit = data => {
-        fetch('http://localhost:5000/purches' , {
+        fetch('https://spooky-ghoul-75443.herokuapp.com/purches' , {
             method:'POST',
             headers:{'Content-Type' : 'application/json'},
             body: JSON.stringify(data)
@@ -39,7 +39,7 @@ const Purches = () => {
 
     // clicked food data load---------------------------------
     useEffect(() => {
-        fetch(`http://localhost:5000/foods/${id}`)
+        fetch(`https://spooky-ghoul-75443.herokuapp.com/foods/${id}`)
             .then(res => res.json())
             .then(data => setSingleFood(data))
 
