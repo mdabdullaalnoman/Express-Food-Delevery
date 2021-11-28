@@ -1,4 +1,4 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, getIdToken } from "firebase/auth";
 import { useEffect, useState } from "react";
 
 const useFirebase = () => {
@@ -16,7 +16,19 @@ const useFirebase = () => {
     // on login user info stored ------------------------------------------
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
-            setIsLoading(true)
+            // get and set id token in local storage--------------
+            if (user) {
+                getIdToken(user)
+                    .then(function (idToken) {
+                        localStorage.setItem('idToken' ,idToken);
+                    })
+                    .catch(function (error) {
+                        console.log(error.message);
+                    });
+            }
+
+
+            // setIsLoading(true)
             if (user) {
                 setUser(user)
                 setIsLoading(false)
@@ -31,9 +43,9 @@ const useFirebase = () => {
     const handleGoogleSignOut = () => {
         setIsLoading(true);
         signOut(auth)
-        .then(() => { })
-       
-        .finally(() => setIsLoading(false));
+            .then(() => { })
+
+            .finally(() => setIsLoading(false));
     }
 
     return {

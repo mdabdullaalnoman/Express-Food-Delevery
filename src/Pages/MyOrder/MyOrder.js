@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
+import { useHistory } from 'react-router';
 import useAuth from '../../ContextProvider/useAuth';
 import Footer from '../Footer/Footer';
 import Navbar from '../Home/Navbar';
@@ -8,10 +9,22 @@ import './MyOrder.css';
 const MyOrder = () => {
     const { user } = useAuth();
     const [order, setOrder] = useState([]);
+    const history = useHistory();
 
     useEffect(() => {
-        fetch(`https://spooky-ghoul-75443.herokuapp.com/purches`)
-            .then(res => res.json())
+        fetch(`http://localhost:5000/purches?email=${user.email}` , {
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('idToken')}`
+            }
+        })
+            .then(res => {
+                if(res.status === 200){
+                    return res.json();
+                }
+                else if(res.status === 401){
+                    history.push('/login');
+                }
+            })
             .then(data => setOrder(data))
 
             .catch(error => console.log(error))
@@ -23,7 +36,7 @@ const MyOrder = () => {
             <Navbar />
             <h1 className="order-tittle">my order</h1>
             {
-                order.length ?
+                order?.length ?
                     <div className="myOrder-warp">
                         {
                             order.map(food =>
