@@ -35,10 +35,6 @@ const AddFood = () => {
                     <input {...register("tittle", { required: true })} placeholder="tittle" />
                     {errors.tittle?.type === 'required' && "title is required"}
 
-                    <p>Description</p>
-                    <input {...register("description", { required: true })} placeholder="description" />
-                    {errors.description && "description is required"}
-
                     <p>Price</p>
                     <input type="number" {...register("price")} placeholder="price" />
                     {errors.price && "price is required"}
@@ -46,6 +42,10 @@ const AddFood = () => {
                     <p>ImageUrl</p>
                     <input {...register("imageUrl", { required: true })} placeholder="imageUrl" />
                     {errors.imageUrl?.type === 'required' && "imageUrl is required"}
+
+                    <p>Description</p>
+                    <input  {...register("description", { required: true })} placeholder="description" />
+                    {errors.description && "description is required"}
 
                     <input type="submit" />
 

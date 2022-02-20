@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: l;
 }
 .add-food form {
     display: flex;
@@ -9,8 +10,15 @@
     width: 50%;
 }
 .add-food input{
-    border: 1px solid var(--lightBlack);
+    border: none;
     width: 100%;
     margin: 2rem 0;
     padding: 1rem 1rem;
+    border-bottom: 2px solid rgb(23, 165, 23);
+}
+.add-food form p {
+    padding: 0;
+    margin: 0;
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
